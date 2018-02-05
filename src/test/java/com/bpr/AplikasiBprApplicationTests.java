@@ -1,7 +1,9 @@
 package com.bpr;
 
 import com.bpr.entity.master.Agama;
+import com.bpr.entity.master.Pendidikan;
 import com.bpr.service.AgamaService;
+import com.bpr.service.PendidikanService;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,6 +20,8 @@ public class AplikasiBprApplicationTests extends TestCase{
 
     @Autowired
 	private AgamaService agamaService;
+    @Autowired
+    private PendidikanService  pendidikanService;
 
 	@Test
 	public void contextLoads() {
@@ -41,5 +45,9 @@ public class AplikasiBprApplicationTests extends TestCase{
         assertEquals(daftarAgama.size(), 0);
 
     }
-
+         @Test
+    public void testPendidikan(){
+        List<Pendidikan> daftarPendidikan = pendidikanService.findAll();
+        assertEquals(daftarPendidikan.size(), 3);
+}
 }
