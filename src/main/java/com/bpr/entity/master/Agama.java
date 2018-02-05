@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tabeldata.bpr.entity.master;
+package com.bpr.entity.master;
 
 import java.sql.Timestamp;
 import javax.persistence.Column;
@@ -20,7 +20,6 @@ import org.hibernate.annotations.GenericGenerator;
  *
  * @author bubun
  */
-public class Agama {
 @Entity
 @Table(name = "master_agama")
 @Data
@@ -46,4 +45,4 @@ public class Agama {
     private String createdBy;
     
 }
-}
+
