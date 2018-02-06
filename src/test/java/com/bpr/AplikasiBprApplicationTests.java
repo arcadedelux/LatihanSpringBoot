@@ -22,6 +22,8 @@ public class AplikasiBprApplicationTests extends TestCase{
 	private AgamaService agamaService;
     @Autowired
     private PendidikanService  pendidikanService;
+    
+    
 
 	@Test
 	public void contextLoads() {
@@ -39,10 +41,31 @@ public class AplikasiBprApplicationTests extends TestCase{
 
         List<Agama> daftarAgama = agamaService.findAll();
         assertEquals(daftarAgama.size(),2 );
+        
+        islam = agamaService.findByNama("Islam");
+        assertNotNull(islam);
+        
+        List<Agama> daftarAgamaByNamaOrDesk =
+                agamaService.mencariBedasarkanNamaAtauDeskripsi("Islam");
+        assertEquals(daftarAgamaByNamaOrDesk.size(), 1);
+            
+        Agama islam2 = new Agama();
+        islam2.setId(islam.getId());
+        islam2.setNama("ISIS");
+        islam2.setCreatedDate(Timestamp.valueOf(LocalDateTime.now()));
+        agamaService.save(islam2);
+        islam2 = agamaService.findById(islam.getId());
 
-        agamaService.delete(daftarAgama);
-        daftarAgama = agamaService.findAll();
-        assertEquals(daftarAgama.size(), 0);
+        agamaService.updateById(kristen.getId(), "Budha", "Chinese");
+        kristen = agamaService.findById(kristen.getId());
+        assertEquals(kristen.getNama(), "Budha");
+        assertEquals(kristen.getDeskripsi(), "Chinese");
+
+       assertEquals(islam2.getNama(), "ISIS");
+
+       // agamaService.delete(daftarAgama);
+        //daftarAgama = agamaService.findAll();
+        //assertEquals(daftarAgama.size(), 0);
 
     }
          @Test
