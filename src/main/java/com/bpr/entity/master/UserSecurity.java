@@ -39,7 +39,10 @@ public class UserSecurity {
     @Column(name="user_id",nullable=false,unique=true)
     private String  id;
     
-    @Column(name="pass",nullable=false,unique=true,length=150)
+    @Column(name="username",nullable=false,unique=true,length=150)
+    private String name;
+            
+    @Column(name="password",nullable=false,unique=true,length=150)
     private String password;
     
     @Column(name="is_active",nullable=false)

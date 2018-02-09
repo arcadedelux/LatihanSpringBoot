@@ -32,7 +32,7 @@ public class Provinsi {
     private String id;
     @Column(name="nama_provinsi",nullable=false,length=50)
     private String nama;
-    @Column(name="create_date",nullable=false)
+    @Column(name="created_date",nullable=false)
     private Timestamp createDate;
     @Column(name="created_by",length=20)
     private String createdBy;

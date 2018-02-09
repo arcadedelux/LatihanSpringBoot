@@ -27,6 +27,6 @@ public interface AgamaRepository extends CrudRepository<Agama,String>{
    public int updateNamaAndDescription(String id, String nama, String description);
    
    @Modifying
-   @Query("delete from Agama where lower(nama) like%1%")
+   @Query("delete from Agama where lower(nama) like %?1%")
    public int deleteYangSama(String name);
 }

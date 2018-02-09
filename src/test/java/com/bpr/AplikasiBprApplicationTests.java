@@ -113,7 +113,7 @@ public class AplikasiBprApplicationTests extends TestCase{
         assertNotNull(admin);
         assertEquals(2, admin.getListRole().size());
 
-        UserSecurity dimas = this.userService.findByUsername("dimas");
+        UserSecurity dimas = this.userService.findByUsername("Arief");
         assertNotNull(dimas);
         assertEquals(1, dimas.getListRole().size());
         }

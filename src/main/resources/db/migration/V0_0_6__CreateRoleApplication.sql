@@ -31,6 +31,6 @@ created_date     TIMESTAMP   NOT NULL
 );
 
 CREATE TABLE security.user_roles(
-user_id CHARACTER VARYING(64) NOT NULL REFERENCES security.users (user.id),
+user_id CHARACTER VARYING(64) NOT NULL REFERENCES security.users (user_id),
 role_id int8 NOT NULL REFERENCES security.roles(role_id)
 );

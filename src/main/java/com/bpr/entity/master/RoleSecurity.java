@@ -42,6 +42,6 @@ public class RoleSecurity {
     private String nama;
     @Column(name="created_by",length=50)
     private String createdBy;
-    @Column(name="create_date",nullable=false)
+    @Column(name="created_date",nullable=false)
     private Timestamp createdDate;
 }

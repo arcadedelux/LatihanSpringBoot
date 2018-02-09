@@ -23,7 +23,7 @@ import org.hibernate.annotations.GenericGenerator;
  * @author bubun
  */
 @Entity
-@Table(name="master_kotakabupaten")
+@Table(name="master_kota_kabupaten")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -46,6 +46,6 @@ public class KotaKabupaten {
     private String createBy;
     
     @OneToOne
-    @JoinColumn(name="id_provinsi",nullable=false)
+    @JoinColumn(name="provinsi_id",nullable=false)
     private Provinsi provinsi;
     }
